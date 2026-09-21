@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HAPPY BIRTHDAY AFFA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Love Reactor / Hold-to-Start Screen -->
+    <div id="loader">
+        <div class="reactorScene">
+            <div class="reactorHeart" aria-hidden="true">❤️</div>
+            <div class="holdHint">(Press and hold)</div>
+
+            <div class="reactorPanel">
+                <div class="reactorStatus"><span class="statusDot"></span> <span id="reactorStatusText">SCAN YOUR FINGERPRINT...</span></div>
+                <div class="reactorStats">
+                    <div><span>THUMB POWER</span><strong id="lovePower">0%</strong></div>
+                    <div><span>CORE TEMP</span><strong id="coreTemp">69.8°C</strong></div>
+                    <div><span>REACTOR</span><strong id="reactorState">STANDBY</strong></div>
+                </div>
+            </div>
+
+            <button id="startBtn" type="button" aria-label="Press and hold to scan your fingerprint">
+                <span class="chargeRing"></span>
+                <span class="fingerprint" aria-hidden="true">
+                    <svg viewBox="0 0 100 100" role="presentation">
+                        <path d="M50 22c-15 0-27 12-27 27 0 6 2 12 5 17"/>
+                        <path d="M50 31c-10 0-18 8-18 18 0 10 6 17 6 27"/>
+                        <path d="M50 40c-5 0-9 4-9 9 0 15 9 22 9 32"/>
+                        <path d="M50 22c15 0 27 12 27 27 0 10-5 18-10 25"/>
+                        <path d="M50 31c10 0 18 8 18 18 0 13-8 20-11 28"/>
+                        <path d="M50 40c5 0 9 4 9 9 0 13-5 20-5 29"/>
+                    </svg>
+                </span>
+                <span class="chargeGlow"></span>
+            </button>
+
+            <div class="chargeInstruction">☝ PRESS &amp; HOLD TO SCAN</div>
+            <div class="chargeProgress"><span id="chargeProgressBar"></span></div>
+        </div>
+    </div>    
+    <!-- Canvas -->
+
+    <canvas id="canvas"></canvas>
+
+    <!-- Glow -->
+
+    <div class="bgGlow"></div>
+
+    <!-- Typing Window -->
+
+    <div id="editor">
+
+        <div class="titleBar">
+
+            <span class="dot red"></span>
+
+            <span class="dot yellow"></span>
+
+            <span class="dot green"></span>
+
+            <span class="title">
+                style.css
+            </span>
+
+        </div>
+
+        <pre id="typing"></pre>
+
+    </div>
+
+    <!-- Final Text -->
+
+    <div id="loveBox">
+
+        <h1 id="loveTitle"></h1>
+
+        <p id="loveMessage"></p>
+
+    </div>
+
+    <!-- Next Page Button -->
+    <button id="nextPageBtn" type="button" aria-label="Go to the next page">
+        <span class="nextLabel"><small>CONTINUE TO</small>MEMORIES</span>
+        <span class="nextArrow">↗</span>
+        <i class="nextShine" aria-hidden="true"></i>
+    </button>
+
+
+    <!-- Memory Gallery - Next Scene -->
+    <section id="memoryPage" aria-label="Beautiful memories">
+        <div class="memoryStars"></div>
+        <div class="memoryPetals" aria-hidden="true"></div>
+
+        <div class="memoryIntro">
+            <span class="memoryKicker">A FEW BEAUTIFUL MEMORIES</span>
+            <h2>Some moments,<br><em>worth keeping forever.</em> ❤️</h2>
+            <p>কিপ্টামি না করে জন্মদিনের ট্রিটটা দিয়ে দিও! 😌🎂</p>
+        </div>
+
+        <div class="memoryGallery">
+            <button class="memoryCard cardOne" type="button" data-full="memory-1.jpeg" aria-label="Open memory photo 1">
+                <span class="photoFrame"><img src="memory-1.jpeg" alt="A beautiful memory"></span>
+                <span class="photoCaption">That beautiful smile ❤️</span>
+            </button>
+
+            <button class="memoryCard cardTwo" type="button" data-full="memory-2.jpeg" aria-label="Open memory photo 2">
+                <span class="photoFrame"><img src="memory-2.jpeg" alt="A beautiful memory"></span>
+                <span class="photoCaption">Simple moments, precious memories 🌸</span>
+            </button>
+
+            <button class="memoryCard cardThree" type="button" data-full="memory-3.jpeg" aria-label="Open memory photo 3">
+                <span class="photoFrame"><img src="memory-3.jpeg" alt="A beautiful memory"></span>
+                <span class="photoCaption">Always this cute ✨</span>
+            </button>
+        </div>
+
+        <div class="memoryEnding">
+            <div class="tinyHeart">♥</div>
+            <p>এখনো কিন্তু জন্মদিনের ট্রিটটা বাকি আছে! 😌❤️........</p>
+        </div>
+    </section>
+
+    <!-- Fullscreen photo viewer -->
+    <div id="photoLightbox" class="photoLightbox" aria-hidden="true">
+        <button class="lightboxClose" type="button" aria-label="Close photo">×</button>
+        <img id="lightboxImage" src="" alt="Memory">
+    </div>
+
+    <!-- Audio -->
+
+    <audio id="music" preload="auto" playsinline loop>
+
+        <source src="saavane-happy-birthday.mp3" type="audio/mpeg">
+
+    </audio>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
